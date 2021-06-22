@@ -1,3 +1,8 @@
+import 'package:covi_tracker/pages/Indiacases.dart';
+import 'package:covi_tracker/pages/Q&A.dart';
+import 'package:covi_tracker/pages/hospitals.dart';
+import 'package:covi_tracker/pages/vaccine.dart';
+import 'package:covi_tracker/pages/worldCases.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,9 +48,25 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+
+          // India
           Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
+            padding: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)),
+              elevation: 18.0,
+              height: 50.0,
+              minWidth: 200.0,
+              color: Colors.purpleAccent,
+              splashColor: Colors.white,
+              onPressed: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => Indiacases(),
+                  ),
+                ),
+              },
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
@@ -54,25 +75,41 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.deepPurple),
+                        color: Colors.white),
                   ),
                 ),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: Color(0XFFefedf2),
-                ),
-              ),
+              // margin: EdgeInsets.symmetric(horizontal: 20),
+              // height: 60,
+              // width: double.infinity,
+              // decoration: BoxDecoration(
+              //   color: Colors.white,
+              //   borderRadius: BorderRadius.circular(20),
+              //   border: Border.all(
+              //     color: Color(0XFFefedf2),
+              //   ),
+              // ),
             ),
           ),
+
+          // world
           Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
+            padding: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)),
+              elevation: 18.0,
+              height: 50.0,
+              minWidth: 200.0,
+              color: Colors.purpleAccent,
+              splashColor: Colors.white,
+              onPressed: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => worldCases(),
+                  ),
+                ),
+              },
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
@@ -81,25 +118,41 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.deepPurple),
+                        color: Colors.white),
                   ),
                 ),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: Color(0XFFefedf2),
-                ),
-              ),
+
+              // margin: EdgeInsets.symmetric(horizontal: 20),
+              // height: 60,
+              // width: double.infinity,
+              // decoration: BoxDecoration(
+              //   color: Colors.white,
+              //   borderRadius: BorderRadius.circular(20),
+              //   border: Border.all(
+              //     color: Color(0XFFefedf2),
+              //   ),
+              // ),
             ),
           ),
+
           Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
+            padding: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)),
+              elevation: 18.0,
+              height: 50.0,
+              minWidth: 200.0,
+              color: Colors.purpleAccent,
+              splashColor: Colors.white,
+              onPressed: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => Hospitals(),
+                  ),
+                ),
+              },
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
@@ -108,25 +161,39 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.deepPurple),
+                        color: Colors.white),
                   ),
                 ),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: Color(0XFFefedf2),
-                ),
-              ),
+              // margin: EdgeInsets.symmetric(horizontal: 20),
+              // height: 60,
+              // width: double.infinity,
+              // decoration: BoxDecoration(
+              //   color: Colors.white,
+              //   borderRadius: BorderRadius.circular(20),
+              //   border: Border.all(
+              //     color: Color(0XFFefedf2),
+              //   ),
+              // ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
+            padding: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)),
+              elevation: 18.0,
+              height: 50.0,
+              minWidth: 200.0,
+              color: Colors.purpleAccent,
+              splashColor: Colors.white,
+              onPressed: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => Vaccine(),
+                  ),
+                ),
+              },
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
@@ -135,25 +202,40 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.deepPurple),
+                        color: Colors.white),
                   ),
                 ),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: Color(0XFFefedf2),
-                ),
-              ),
+              // margin: EdgeInsets.symmetric(horizontal: 20),
+              // height: 60,
+              // width: double.infinity,
+              // decoration: BoxDecoration(
+              //   color: Colors.white,
+              //   borderRadius: BorderRadius.circular(20),
+              //   border: Border.all(
+              //     color: Color(0XFFefedf2),
+              //   ),
+              // ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(
+            padding: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)),
+              elevation: 18.0,
+              height: 50.0,
+              minWidth: 200.0,
+              color: Colors.purpleAccent,
+              splashColor: Colors.white,
+
+              onPressed: () => {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => Questions(),
+                  ),
+                ),
+              },
               child: Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
@@ -162,20 +244,20 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
-                        color: Colors.deepPurple),
+                        color: Colors.white),
                   ),
                 ),
               ),
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(
-                  color: Color(0XFFefedf2),
-                ),
-              ),
+              // margin: EdgeInsets.symmetric(horizontal: 20),
+              // height: 60,
+              // width: double.infinity,
+              // decoration: BoxDecoration(
+              //   color: Colors.white,
+              //   borderRadius: BorderRadius.circular(20),
+              //   border: Border.all(
+              //     color: Color(0XFFefedf2),
+              //   ),
+              // ),
             ),
           ),
         ],
