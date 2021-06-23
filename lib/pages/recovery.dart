@@ -1,18 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-class Indiacases extends StatefulWidget {
+class Recovery extends StatefulWidget {
   @override
-  _IndiacasesState createState() => _IndiacasesState();
+  _RecoveryState createState() => _RecoveryState();
 }
 
-class _IndiacasesState extends State<Indiacases> {
-  final String url = "https://api.rootnet.in/covid19-in/stats/latest";
+class _RecoveryState extends State<Recovery> {
+  final String url = "https://corona.lmao.ninja/v2/countries";
+
   Future<List> datas;
 
   Future<List> getData() async {
     var response = await Dio().get(url);
-    return response.data['data']['regional'];
+    return response.data;
   }
 
   @override
@@ -21,7 +22,7 @@ class _IndiacasesState extends State<Indiacases> {
     datas = getData();
   }
 
-  Future showcard(String ind, death) async {
+  Future showcard(String recovered) async {
     await showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -32,19 +33,12 @@ class _IndiacasesState extends State<Indiacases> {
               child: ListBody(
                 children: [
                   Text(
-                    "Total Active Cases: $ind",
-                    style: TextStyle(
-                        fontSize: 18.0,
-                        color: Colors.red,
-                        fontWeight: FontWeight.w800),
-                  ),
-                  Text(
-                    "Total Death Cases: $death",
+                    "Total Recovered Cases: $recovered",
                     style: TextStyle(
                         fontSize: 18.0,
                         color: Colors.green,
                         fontWeight: FontWeight.w800),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -56,7 +50,7 @@ class _IndiacasesState extends State<Indiacases> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("CoronaVirus Cases in India (STATEWISE"),
+        title: Text("CoronaVirus Recovery Cases in the world"),
         backgroundColor: Colors.purpleAccent,
       ),
       backgroundColor: Colors.transparent,
@@ -77,8 +71,7 @@ class _IndiacasesState extends State<Indiacases> {
                     width: 50,
                     child: GestureDetector(
                       onTap: () => showcard(
-                        SnapShot.data[index]['confirmedCasesIndian'].toString(),
-                        SnapShot.data[index]['deaths'].toString(),
+                        SnapShot.data[index]['recovered'].toString(),
                       ),
                       child: Card(
                         child: Flexible(
@@ -91,14 +84,14 @@ class _IndiacasesState extends State<Indiacases> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Image(
-                                    //  shrinkWrap: true,
                                     height: 100,
                                     width: 100,
-                                    image:
-                                        AssetImage('assets/images/india.png'),
+                                    //  shrinkWrap: true,
+                                    image: AssetImage(
+                                        'assets/images/earthtwo.png'),
                                   ),
                                   Text(
-                                    SnapShot.data[index]['loc'],
+                                    SnapShot.data[index]['country'],
                                     style: TextStyle(
                                         color: Colors.purple[400],
                                         fontWeight: FontWeight.w900),

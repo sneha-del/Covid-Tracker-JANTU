@@ -1,6 +1,6 @@
 import 'package:covi_tracker/pages/Indiacases.dart';
-import 'package:covi_tracker/pages/Q&A.dart';
-import 'package:covi_tracker/pages/hospitals.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:covi_tracker/pages/recovery.dart';
 import 'package:covi_tracker/pages/vaccine.dart';
 import 'package:covi_tracker/pages/worldCases.dart';
 import 'package:flutter/material.dart';
@@ -49,6 +49,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
+// navigateToWHO(url) async {
+//   if(await canLauch(url)){
+//     await launch(url);
+//   }
+//   else{
+//     Text("Link is not working $url");
+//   }
+// }
+
           // India
           Padding(
             padding: EdgeInsets.fromLTRB(20.0, 25.0, 20.0, 0.0),
@@ -56,7 +65,7 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.0)),
               elevation: 18.0,
-              height: 50.0,
+              height: 60.0,
               minWidth: 200.0,
               color: Colors.purpleAccent,
               splashColor: Colors.white,
@@ -71,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
                   child: Text(
-                    "India Corona Virus Cases",
+                    "India Covid 19 Cases",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
@@ -99,7 +108,7 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.0)),
               elevation: 18.0,
-              height: 50.0,
+              height: 60.0,
               minWidth: 200.0,
               color: Colors.purpleAccent,
               splashColor: Colors.white,
@@ -114,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
                   child: Text(
-                    "World Corona Virus Cases",
+                    "World Covid 19 Cases",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
@@ -142,14 +151,14 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.0)),
               elevation: 18.0,
-              height: 50.0,
+              height: 60.0,
               minWidth: 200.0,
               color: Colors.purpleAccent,
               splashColor: Colors.white,
               onPressed: () => {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => Hospitals(),
+                    builder: (_) => Recovery(),
                   ),
                 ),
               },
@@ -157,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
                   child: Text(
-                    "Recovery India/Hospitals",
+                    "Recovery (WORLD)",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
@@ -183,7 +192,7 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.0)),
               elevation: 18.0,
-              height: 50.0,
+              height: 60.0,
               minWidth: 200.0,
               color: Colors.purpleAccent,
               splashColor: Colors.white,
@@ -224,7 +233,7 @@ class _HomePageState extends State<HomePage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22.0)),
               elevation: 18.0,
-              height: 50.0,
+              height: 60.0,
               minWidth: 200.0,
               color: Colors.purpleAccent,
               splashColor: Colors.white,
@@ -232,7 +241,8 @@ class _HomePageState extends State<HomePage> {
               onPressed: () => {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => Questions(),
+                    builder: (_) => navigateToWHO(
+                        'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19'),
                   ),
                 ),
               },
@@ -263,6 +273,14 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+}
+
+navigateToWHO(url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    Text("Link is not working $url");
   }
 }
 
